@@ -1,0 +1,30 @@
+/* Optional custom styles */
+body {
+  scroll-behavior: smooth;
+}
+
+/* Add a soft fade-in animation to sections */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.8s ease-out;
+}
+
+h1, h2 {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Optional hover scaling for playlist cards */
+.card-hover:hover {
+  transform: scale(1.03);
+  transition: transform 0.3s ease;
+}

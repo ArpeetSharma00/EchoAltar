@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Echo Altar | Music</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-black text-white">
+  <header class="text-center py-6 bg-gray-900 text-3xl font-bold">
+    🎧 Echo Altar - Music Library
+  </header>
+
+  <main class="px-6 py-10">
+    <input type="text" placeholder="Search for a song..." class="w-full md:w-1/2 mb-6 p-3 rounded bg-gray-800 border border-gray-700" id="searchInput" />
+
+    <div id="songList" class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <!-- Sample Song Card -->
+      <div class="bg-gray-800 p-4 rounded-xl cursor-pointer hover:bg-gray-700" onclick="playSong('assets/song1.mp3')">
+        <img src="assets/playlist1.jpg" class="rounded mb-2"/>
+        <h3 class="text-xl">Mystical Journey</h3>
+        <p class="text-gray-400 text-sm">Artist: Echo</p>
+      </div>
+
+      <!-- Add more songs -->
+    </div>
+  </main>
+
+  <!-- Music Player -->
+  <footer class="fixed bottom-0 left-0 right-0 bg-gray-900 p-4">
+    <audio id="audioPlayer" controls class="w-full"></audio>
+  </footer>
+
+  <script>
+    function playSong(src) {
+      const player = document.getElementById('audioPlayer');
+      player.src = src;
+      player.play();
+    }
+
+    document.getElementById("searchInput").addEventListener("input", function () {
+      const filter = this.value.toLowerCase();
+      document.querySelectorAll("#songList div").forEach(song => {
+        song.style.display = song.innerText.toLowerCase().includes(filter) ? "block" : "none";
+      });
+    });
+  </script>
+</body>
+</html>

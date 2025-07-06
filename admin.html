@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Echo Altar | Admin</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-black text-white">
+  <header class="text-center py-6 bg-gray-900 text-3xl font-bold">
+    🛠️ Echo Altar - Admin Panel
+  </header>
+
+  <main class="px-6 py-10 max-w-xl mx-auto">
+    <h2 class="text-xl mb-4">Upload New Song</h2>
+    <form id="uploadForm" class="bg-gray-800 p-6 rounded-xl">
+      <input type="text" placeholder="Song Title" class="w-full p-3 mb-4 rounded bg-gray-900 border border-gray-700" required/>
+      <input type="file" accept=".mp3" class="w-full p-3 mb-4 bg-gray-900 border border-gray-700 rounded" required/>
+      <button type="submit" class="bg-indigo-600 hover:bg-indigo-700 px-6 py-3 rounded text-white">Upload</button>
+    </form>
+
+    <p id="uploadStatus" class="mt-4 text-green-400 hidden">✅ Uploaded successfully (not really, demo only)</p>
+  </main>
+
+  <script>
+    document.getElementById("uploadForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      document.getElementById("uploadStatus").classList.remove("hidden");
+    });
+  </script>
+</body>
+</html>

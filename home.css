@@ -1,0 +1,13 @@
+body {
+  scroll-behavior: smooth;
+}
+
+.hero-title {
+  font-family: 'Segoe UI', sans-serif;
+  animation: fadeIn 1s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
